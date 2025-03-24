@@ -1,0 +1,235 @@
+.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.section-title::after {
+  content: '';
+  width: 60px;
+  height: 4px;
+  background-color: #ff6600;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section-title-kontak {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+  margin-top: 0%;
+}
+
+.section-title-kontak::after {
+  content: '';
+  width: 60px;
+  height: 4px;
+  background-color: #03a4ed;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+}
+
+.main-content {
+  flex: 1;
+}
+
+/* Styling untuk container slider */
+.right-image {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  /* Sembunyikan bagian gambar yang keluar dari container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-image .carousel-inner {
+  width: 100%;
+}
+
+.right-image .carousel-item img {
+  width: 100%;
+  height: auto;
+  /* Pastikan proporsi gambar tetap */
+  object-fit: cover;
+  /* Memastikan gambar tetap proporsional */
+}
+
+
+/* Styling untuk slider */
+.slider {
+  display: flex;
+  width: 300%;
+  height: 100%;
+  animation: slide 10s infinite;
+  /* Animasi otomatis */
+}
+
+/* Styling untuk setiap gambar */
+.slider img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  /* Menjaga proporsi gambar */
+}
+
+/* Style dasar untuk navigasi */
+.nav {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+/* Style untuk menu utama */
+.nav li {
+  position: relative;
+}
+
+/* Style dropdown */
+.dropdown-menu {
+  display: none;
+  /* Pastikan awalnya disembunyikan */
+  position: absolute;
+  background-color: white;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  min-width: 180px;
+  top: 100%;
+  left: 0;
+  padding: 10px 0;
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+/* Style untuk item dalam dropdown */
+.dropdown-menu li {
+  list-style: none;
+  padding: 10px;
+}
+
+.dropdown-menu li a {
+  text-decoration: none;
+  color: black;
+  display: block;
+  padding: 8px 15px;
+  transition: background 0.3s;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Menampilkan dropdown saat hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown>a i {
+  font-size: 12px;
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+/* Rotasi panah ke atas saat dropdown aktif */
+.dropdown:hover>a i {
+  transform: rotate(180deg);
+}
+
+.footer {
+  background-color: #f8f9fa;
+  padding: 20px;
+  /* text-align: center; */
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  /* flex-wrap: wrap; */
+  max-width: 1000px;
+  margin: auto;
+  border-bottom: 2px solid #ddd;
+}
+
+.footer-column {
+  margin: 10px;
+  flex: 1;
+  min-width: 200px;
+  padding: 10px;
+
+}
+
+.footer-column h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 15px;
+}
+
+.footer-column ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .dropdown-menu {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+    background-color: transparent;
+  }
+
+  .dropdown-menu li {
+    text-align: center;
+    padding: 10px 0;
+  }
+}
+
+/* Animasi slider */
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+
+  33% {
+    transform: translateX(-100%);
+  }
+
+  66% {
+    transform: translateX(-200%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.navbar-nav .nav-link.active {
+  color: red !important;
+  font-weight: bold;
+}
